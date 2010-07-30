@@ -1,4 +1,22 @@
 Castly::Application.routes.draw do
+  resources :payments
+
+  resources :invites
+
+  resources :pages
+
+  resources :downloads
+
+  resources :videos
+
+  get "sessions/create"
+
+  get "sessions/destroy"
+
+  get "sessions/new"
+
+  resources :users
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
