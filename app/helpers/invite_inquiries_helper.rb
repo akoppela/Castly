@@ -1,0 +1,2 @@
+module InviteInquiriesHelper
+end

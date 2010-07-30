@@ -1,4 +1,6 @@
 Castly::Application.routes.draw do
+  resources :invite_inquiries
+
   resources :payments
 
   resources :invites

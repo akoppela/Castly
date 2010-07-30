@@ -1,0 +1,2 @@
+class InviteInquiriesController < ApplicationController
+end
