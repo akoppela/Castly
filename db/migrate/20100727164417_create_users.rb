@@ -27,7 +27,6 @@ class CreateUsers < ActiveRecord::Migration
     
     add_index :users, :login
     add_index :users, :persistence_token
-    add_index :users, :last_request_at
     add_index :users, :token
   end
 
