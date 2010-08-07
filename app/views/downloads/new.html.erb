@@ -1,0 +1,7 @@
+<h2>Creating New Download</h2>
+<div class="box">
+	<%= semantic_form_for @download do |form| %>
+    <%= form.inputs :file, :file_remote_url %>
+	  <%= form.buttons  %>
+	<% end %>
+</div>

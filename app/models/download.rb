@@ -1,10 +1,11 @@
 class Download < ActiveRecord::Base
   belongs_to :user
-  
-  before_save :check_type
-  
-  has_attached_file :file
-  
+
+  validates :user, :presence => true
+
+  after_create :job_process
+
+  has_attached_file :file  
   
   state_machine :initial => :created do
      after_transition :created => :downloading, :do => :notify_about_downloading
@@ -25,6 +26,9 @@ class Download < ActiveRecord::Base
      state :finished
   end
   
-  
-  
+  private
+    def job_process
+      job_type = torrent ? "TorrentDownload" : "FileDownload"
+      Jobling::Processor.enqueue job_type, id
+    end
 end
