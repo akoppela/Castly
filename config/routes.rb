@@ -1,27 +1,12 @@
 Castly::Application.routes.draw do
-  resources :invite_inquiries
-
-  resources :payments
-
-  resources :invites
-
-  resources :pages
-
-  resources :downloads
-
-  resources :videos
-
-  get "sessions/create"
-
-  get "sessions/destroy"
-
-  get "sessions/new"
-
-  resources :users
-
-  # The priority is based upon order of creation:
-  # first created -> highest priority.
-
+  resources :invite_inquiries, :payments, :invites, :pages, :downloads, :videos, :users
+  
+  resource :sessions
+  root :to => "welcome#index"
+  
+  get 'login' => "sessions#new"
+  get 'signup' => "users#new"
+  
   # Sample of regular route:
   #   match 'products/:id' => 'catalog#view'
   # Keep in mind you can assign values other than :controller and :action

@@ -20,9 +20,6 @@ class CreateVideos < ActiveRecord::Migration
       t.integer     :episode_number, :default => 0
       t.integer     :season_number,  :default => 0
       
-      
-      
-      
       t.integer     :sec_viewed, :default => 0, :null => false
       
       t.timestamps

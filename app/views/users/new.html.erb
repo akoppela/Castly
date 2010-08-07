@@ -1,0 +1,7 @@
+<h1>Users#new</h1>
+<div class="box">
+  <%= semantic_form_for @user do |form| %>
+	  <%= form.inputs :login, :password, :password_confirmation, :invite_token, :accept_notice, :accept_rules, :time_zone %>
+    <%= form.buttons  %>
+  <% end %>
+</div>

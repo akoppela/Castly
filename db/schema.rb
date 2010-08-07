@@ -36,6 +36,11 @@ ActiveRecord::Schema.define(:version => 20100730154914) do
   end
 
   create_table "invites", :force => true do |t|
+    t.integer  "sender_id"
+    t.integer  "recipient_id"
+    t.string   "recipient_email"
+    t.string   "token"
+    t.datetime "accept_at"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -49,15 +54,6 @@ ActiveRecord::Schema.define(:version => 20100730154914) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
-
-  create_table "seasons", :force => true do |t|
-    t.integer  "video_id",   :null => false
-    t.string   "title"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  add_index "seasons", ["video_id"], :name => "index_seasons_on_video_id"
 
   create_table "users", :force => true do |t|
     t.string   "login",             :limit => 128,                                                   :null => false
@@ -94,12 +90,16 @@ ActiveRecord::Schema.define(:version => 20100730154914) do
   create_table "videos", :force => true do |t|
     t.integer  "user_id",                           :null => false
     t.integer  "video_file_id"
+    t.integer  "size"
+    t.integer  "play_count"
+    t.datetime "last_played"
     t.string   "title",                             :null => false
     t.integer  "sec_length",     :default => 0,     :null => false
+    t.text     "description"
     t.boolean  "serial",         :default => false
     t.integer  "parent_id"
     t.integer  "episode_number", :default => 0
-    t.integer  "season_id"
+    t.integer  "season_number",  :default => 0
     t.integer  "sec_viewed",     :default => 0,     :null => false
     t.datetime "created_at"
     t.datetime "updated_at"

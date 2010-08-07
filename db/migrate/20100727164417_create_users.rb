@@ -1,7 +1,7 @@
 class CreateUsers < ActiveRecord::Migration
   def self.up
     create_table :users do |t|
-      t.string :login,  :limit => 128, :null => false
+      t.string   :login,  :limit => 128, :null => false
       
       t.string   :token, :limit => 128
       t.string   :crypted_password, :null => false
@@ -22,6 +22,7 @@ class CreateUsers < ActiveRecord::Migration
       t.decimal  :balance, :precision => 12, :scale => 2, :default => 0
       t.string   :time_zone
       
+      t.integer :invite_limit, :null => false, :default => 0
       t.timestamps
     end
     

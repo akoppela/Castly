@@ -1,2 +1,11 @@
 <h1>Sessions#new</h1>
-<p>Find me in app/views/sessions/new.html.erb</p>
+<div class="box">
+	<%= semantic_form_for @session, :url => sessions_path do |form| %>
+
+	  <%= form.inputs :name => "Your Secure Information" do %>
+	    <%= form.input :login %>
+	    <%= form.input :password %>
+	  <% end %>
+	  <%= form.buttons  %>
+	<% end %>
+</div>
