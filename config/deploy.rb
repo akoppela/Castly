@@ -4,9 +4,9 @@ set :repository,  "git@blinr.unfuddle.com:blinr/castly.git"
 set :scm, :git
 set :user, "apps"
 set :use_sudo, false
-role :app, "castly.com"
-role :app, "castly.com"
-role :db,  "castly.com", :primary => true
+role :app, "74.207.233.12"
+role :app, "74.207.233.12"
+role :db,  "74.207.233.12", :primary => true
 
 set :deploy_to, "/srv/apps/#{application}"
 
@@ -50,4 +50,4 @@ after 'deploy:update_code', 'deploy:bundle',
                             'deploy:link_database_config',
                             'deploy:link_sockets_dir'
                             
-after "deploy:restart", "unicorn:restart"
+#after "deploy:restart", "unicorn:restart"

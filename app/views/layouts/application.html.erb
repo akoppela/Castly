@@ -1,16 +1,17 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <title>Castly</title>
-  <%= stylesheet_link_tag :all -%>
-  <%= javascript_include_tag :all -%>
-  <%= csrf_meta_tag -%>
-</head>
-<body>
-	<div class="content">
-    <%= render :partial => "shared/menu" %>
-    <hr/>
-		<%= yield %>
-	</div>
-</body>
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" xml:lang="en">
+  <head>
+    <title>Castly</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="description" content="Castly" />
+    <meta name="keywords" content="Castly" />
+    <link rel="shortcut icon" href="/styles/favicon.ico" type="image/x-icon" />
+    <%= yield :style %>
+  </head>
+  <body>
+    <div class="page">
+      <%= yield %>
+    </div>
+  </body>
 </html>

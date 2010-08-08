@@ -1,0 +1,21 @@
+body { background:url(../images/body-bg1.gif) repeat 0 0; margin:0; font-family:Arial,serif; font-size:100.01%; text-align:left !important; text-align:center }
+div, p, ul, ol, li, input, textarea, h1,h2,h3,h4,h5,h6, b,i,s,u,strong,em { margin:0; padding:0; font-size:100.01%; font-weight:normal; font-style:normal; text-align:left; font-family:Arial,serif }
+img, div, input { behavior: url(iepngfix.htc) }
+img { border:none }
+input, textarea { outline:none }
+.hidden { display:none !important }
+
+.page { position:relative; margin:80px auto 0 auto; width:630px; min-width:630px; min-height:230px; background:url(../images/prerelease-bg.gif) repeat 0 0; -moz-border-radius:3px; -webkit-border-radius:3px; -khtml-border-radius:3px; border-radius:3px; -webkit-box-shadow: 1px 1px 3px #333; -moz-box-shadow: 1px 1px 3px #333; box-shadow: 1px 1px 3px #333 }
+.page .logo { position:relative; width:230px; height:230px; float:left; z-index:1 }
+.page .logo h1 { margin:10px 0 0 30px }
+.page .logo .slogan { position:absolute; top:69px; left:32px; font-size:11px; font-weight:bold; color:#6e7888; text-shadow:0 1px 1px #0a0b0c }
+.page .logo .separator { position:absolute; top:0; right:0; width:4px; height:100%; background:url(../images/prerelease-separator.gif) repeat-y 0 0 }
+.page .main .welcome { float:left; margin:22px 0 15px 25px; font-size:18px; color:#bccadf; font-weight:bold; text-shadow:0 1px 1px #0a0b0c; letter-spacing:-1px }
+.page .main .clones { float:left; margin-left:25px; font-size:14px; line-height:19px; font-weight:bold; color:#6e7888; text-shadow:0 1px 1px #09090a; letter-spacing:-0.5px }
+.page .main .inform { margin:15px 0 0 25px; float:left; font-size:14px; line-height:19px; font-weight:bold; color:#6e7888; text-shadow:0 1px 1px #09090a; letter-spacing:-0.5px }
+.page .main .email-form { float:left; margin:20px 0 0 25px }
+.page .main .email-form #email { float:left; height:29px; width:240px; padding:0 10px; background:#fff; border:none; font-size:13px; color:#afb9c9; text-shadow:1px 0 1px #dadee6; -moz-border-radius:3px; -webkit-border-radius:3px; -khtml-border-radius:3px; border-radius:3px }
+.page .main .email-form #email:focus { color:#333 }
+.page .main .email-form .submit { display:block; float:left; margin-left:7px; width:77px; height:30px; background:url(../images/prerelease-submit-bg.gif) repeat-x 0 0; font-size:13px; font-weight:bold; line-height:30px; color:#fff; text-align:center; text-decoration:none; text-shadow:0 -1px 1px #b32800, 1px 0 1px #e58d76; -moz-border-radius:3px; -webkit-border-radius:3px; -khtml-border-radius:3px; border-radius:3px; }
+.page .main .email-form .submit:hover { opacity:0.8 }
+.page .border-bottom { position:absolute; bottom:0; left:0; width:100%; height:6px; background:url(../images/prerelease-border-bottom.gif) repeat-x 0 0; -moz-border-radius:3px; -webkit-border-radius:3px; -khtml-border-radius:3px; border-radius:3px; }

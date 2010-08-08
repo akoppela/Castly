@@ -1,8 +1,9 @@
 class CreateInviteInquiries < ActiveRecord::Migration
   def self.up
     create_table :invite_inquiries do |t|
-      t.string :email, :null => false
-      t.boolean :confirmed, :default => false
+      t.string    :email, :null => false
+      t.boolean   :confirmed, :default => false
+      t.timestamp :confirmed_at
       t.references :invite
       t.timestamps
     end

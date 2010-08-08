@@ -1,0 +1,21 @@
+<div class="logo">
+  <h1>
+    <%= image_tag "prerelease-logo.png", :title => "Castly", :alt => "Castly" %>
+  </h1>
+  <div class="slogan">Get. Watch. Share.</div>
+  <div class="separator"></div>
+</div>
+<div class="main">
+  <h2 class="welcome">Aloha, mi amore!</h2>
+  <p class="clones">One million clones are working to get this project<br/>awesome. It will be there soon. Get patience a bit.</p>
+  <p class="inform">Type your email address and we gonna inform you<br/>about this incredible date.</p>
+  <div class="email-form">
+    <%= form_for @invite_inquiry ||= InviteInquiry.new do |f| %>
+      <%= f.text_field :email, :id => "email", :placeholder => "My email address is..." -%>
+      <a href="#" class="submit">I'm in.</a>
+    <% end %>
+  </div>
+</div>
+<div class="border-bottom"></div>
+
+<% styles :prerelease %>
