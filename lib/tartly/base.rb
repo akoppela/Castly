@@ -2,6 +2,13 @@ module Tartly
   class Base
     attr_accessor :host, :port, :path
     
+    CHECK_WAIT = 1
+    CHECK      = 2
+    DOWNLOAD   = 4
+    SEED       = 8
+    STOPPED    = 16
+    
+    
     def initialize(host = nil, port = nil, path = nil)
       @config = YAML.load_file(Rails.root + "config/torrent.yml")
       @host = host || @config["atb_1"]["host"] #TODO Rewrite to many downloaders machine
@@ -14,8 +21,10 @@ module Tartly
         process 'torrent-add', 'filename' => torrent_file_url
       end
     
-      def get_info(ids)
-        process 'torrent-get', 'ids' => Array.wrap(ids), 'fields' => ["id","totalSize","downloadDir", "percentDone", "files"]
+      def get_info(ids = nil)
+        args = {'fields' => ["id","totalSize","downloadDir", "percentDone", "files", "status"]}
+        args["ids"] = ids if ids.present?
+        process 'torrent-get', args
       end
     
       def stop(ids)
