@@ -1,0 +1,34 @@
+segment_prefix: 'castly'
+index_prefix: 'stream'
+
+
+log_type: 'STDOUT'
+log_level: 'DEBUG'
+
+url_prefix: ""
+
+# segment length in seconds
+segment_length: 10 
+
+# how many segments to keep in the index
+index_segment_count: 15
+
+# this command is used for multirate encodings and is what pushes the encoders
+source_command: 'cat %s'
+
+# This is the location of the segmenter
+segmenter_binary: 'live_segmenter'
+
+# the encoding profile to use
+encoding_profile: 'ipad_wifi_custom'
+
+#
+# Encoding profiles
+#
+ipad_wifi: 
+    ffmpeg_command: "ffmpeg -er 4 -i %s -f mpegts -acodec libmp3lame -ar 32000 -ab 48k -s 640x480 -vcodec libx264 -b 1200k -flags +loop+mv4 -cmp 256 -partitions +parti4x4+partp8x8+partb8x8 -subq 7 -trellis 1 -refs 5 -coder 0 -me_range 16 -keyint_min 25 -sc_threshold 40 -i_qfactor 0.71 -bt 1200k -maxrate 1200k -bufsize 1200k -rc_eq 'blurCplx^(1-qComp)' -qcomp 0.6 -qmin 10 -qmax 51 -qdiff 4 -level 30 -aspect 16:9 -r 30 -g 90 -async 2 - | %s %s %s %s %s"
+    bandwidth: 1248000
+    
+ipad_wifi_custom: 
+    ffmpeg_command: "ffmpeg -y -i %s -threads 0 -s 720x400 -aspect 720:400 -r 29.97 -vcodec libx264 -b 1000k -qmin 20 -qmax 50 -bufsize 10221k -maxrate 1800k -acodec libfaac -ar 44100 -ac 2 -ab 128k -f mpegts -coder 1 -flags +loop -cmp +chroma -partitions +parti8x8+parti4x4+partp8x8+partb8x8 -me_method umh -subq 8 -me_range 16 -g 250 -keyint_min 25 -sc_threshold 40 -i_qfactor 0.71 -b_strategy 2 -qcomp 0.6 -qdiff 4 -bf 3 -refs 4 -directpred 3 -trellis 1 -flags2 +wpred+mixed_refs+dct8x8+fastpskip+mbtree -wpredp 2 - | %s %s %s %s %s"
+    bandwidth: 1248000
