@@ -1,9 +1,4 @@
-development:
-  adapter: mysql
-  encoding: utf8
-  reconnect: true
-  database: castly_development
-  pool: 5
-  username: root
-  password:
-  socket: /tmp/mysql.sock
+atb_1:
+  port: 9091
+  path: /transmission/rpc
+  host: blinr.com
