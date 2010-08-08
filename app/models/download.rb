@@ -29,6 +29,6 @@ class Download < ActiveRecord::Base
   private
     def job_process
       job_type = torrent ? "TorrentDownload" : "FileDownload"
-      Jobling::Processor.enqueue job_type, id
+      Jobling::Processor.enqueue :processor => job_type, :args => id
     end
 end

@@ -10,7 +10,13 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100730154914) do
+ActiveRecord::Schema.define(:version => 20100808131344) do
+
+  create_table "download_files", :force => true do |t|
+    t.integer  "download_id", :null => false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "downloads", :force => true do |t|
     t.integer  "user_id",           :null => false
@@ -41,6 +47,20 @@ ActiveRecord::Schema.define(:version => 20100730154914) do
     t.string   "recipient_email"
     t.string   "token"
     t.datetime "accept_at"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "jobs", :force => true do |t|
+    t.integer  "priority",          :default => 0
+    t.integer  "attempts",          :default => 0
+    t.text     "encoded_processor"
+    t.string   "queue"
+    t.string   "last_error"
+    t.datetime "locked_at"
+    t.datetime "processed_at"
+    t.datetime "failed_at"
+    t.string   "locked_by"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
