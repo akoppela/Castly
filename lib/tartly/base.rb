@@ -15,7 +15,7 @@ module Tartly
       end
     
       def get_info(ids)
-        process 'torrent-get', 'ids' => Array.wrap(ids), 'fields' => ["id","leftUntilDone","downloadDir", "percentDone", "files"]
+        process 'torrent-get', 'ids' => Array.wrap(ids), 'fields' => ["id","totalSize","downloadDir", "percentDone", "files"]
       end
     
       def stop(ids)
@@ -29,8 +29,6 @@ module Tartly
       def reannounce(ids)
         process 'torrent-reannounce', 'ids' => Array.wrap(ids)
       end
-      
-      def 
       
       def process(method, args = {}, headers = {})
         (@base ||= new).send_request(method, args, headers)

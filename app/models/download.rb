@@ -1,6 +1,7 @@
 class Download < ActiveRecord::Base
   belongs_to :user
-
+  has_many :download_files
+  
   validates :user, :presence => true
 
   after_create :job_process

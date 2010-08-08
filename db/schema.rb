@@ -13,13 +13,17 @@
 ActiveRecord::Schema.define(:version => 20100808131344) do
 
   create_table "download_files", :force => true do |t|
-    t.integer  "download_id", :null => false
+    t.integer  "download_id",    :null => false
+    t.string   "title"
+    t.integer  "common_size"
+    t.integer  "completed_size"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
   create_table "downloads", :force => true do |t|
     t.integer  "user_id",           :null => false
+    t.string   "title"
     t.string   "file_file_name"
     t.string   "file_content_type"
     t.integer  "file_file_size"
@@ -27,6 +31,10 @@ ActiveRecord::Schema.define(:version => 20100808131344) do
     t.boolean  "torrent"
     t.integer  "torrent_id"
     t.string   "state",             :null => false
+    t.float    "procent_complete"
+    t.integer  "common_size"
+    t.integer  "completed_size"
+    t.string   "info_hash"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -91,6 +99,7 @@ ActiveRecord::Schema.define(:version => 20100808131344) do
     t.boolean  "accept_rules",                                                    :default => false
     t.decimal  "balance",                          :precision => 12, :scale => 2, :default => 0.0
     t.string   "time_zone"
+    t.integer  "invite_limit",                                                    :default => 0,     :null => false
     t.datetime "created_at"
     t.datetime "updated_at"
   end
