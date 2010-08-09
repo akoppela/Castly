@@ -36,7 +36,7 @@ end
 
 namespace :unicorn do
   task :start do
-    run "(cd #{current_path} && unicorn -c config/unicorn.rb -E production -D)"
+    run "(cd #{current_path} && unicorn_rails -c config/unicorn.rb -E production -D)"
   end
   task :stop do
     run "(cd #{current_path} && kill -QUIT `cat #{current_path}/tmp/pids/unicorn.pid`)"

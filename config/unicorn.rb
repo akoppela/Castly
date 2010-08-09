@@ -11,7 +11,6 @@ preload_app true
 # Restart any workers that haven't responded in 30 seconds
 timeout 30
 
-pid "#{RAILS_ROOT}/tmp/pids/unicorn.pid"
 
 # Listen on a Unix data socket
 listen "#{RAILS_ROOT}/tmp/sockets/unicorn.sock", :backlog => 2048
