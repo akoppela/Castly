@@ -15,7 +15,7 @@ class CreateUsers < ActiveRecord::Migration
       t.string   :last_login_ip
       t.string   :current_login_ip
       
-      
+      t.string   :display_name
       
       t.boolean  :accept_notice, :default => false
       t.boolean  :accept_rules, :default => false

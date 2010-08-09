@@ -11,12 +11,16 @@ class User < ActiveRecord::Base
   
   validates :invite_token, :presence => true
   
+  def display_name
+    super || login
+  end
+  
   def invite_token
     invite.token if invite
   end
   
   def invite_token=(v)
-    invite = Invite.find_by_token(v)
+    self.invite = Invite.find_by_token(v)
   end
   
 end

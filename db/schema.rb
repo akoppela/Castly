@@ -42,8 +42,9 @@ ActiveRecord::Schema.define(:version => 20100808131344) do
   add_index "downloads", ["user_id"], :name => "index_downloads_on_user_id"
 
   create_table "invite_inquiries", :force => true do |t|
-    t.string   "email",                         :null => false
-    t.boolean  "confirmed",  :default => false
+    t.string   "email",                           :null => false
+    t.boolean  "confirmed",    :default => false
+    t.datetime "confirmed_at"
     t.integer  "invite_id"
     t.datetime "created_at"
     t.datetime "updated_at"
@@ -95,6 +96,7 @@ ActiveRecord::Schema.define(:version => 20100808131344) do
     t.datetime "current_login_at"
     t.string   "last_login_ip"
     t.string   "current_login_ip"
+    t.string   "display_name"
     t.boolean  "accept_notice",                                                   :default => false
     t.boolean  "accept_rules",                                                    :default => false
     t.decimal  "balance",                          :precision => 12, :scale => 2, :default => 0.0
