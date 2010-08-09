@@ -1,0 +1,34 @@
+<div class="header">
+  <div class="header-wrapper">
+    <div class="logo">
+      <a href="/">
+        <%= image_tag "logo.gif", :title => "Castly", :alt => "Castly" %>
+      </a>
+    </div>
+    <div class="add-media">
+      <a href="#">
+        <span class="text">Add media</span>
+        <i class="border-left"></i><i class="border-right"></i><i class="bg"></i>
+      </a>
+    </div>
+    <div class="add-media-after-line"></div>
+    <div class="invite-friends">
+      <a href="#">
+        <span class="text">Invite friends</span>
+        <i class="border-left"></i><i class="border-right"></i><i class="bg"></i>
+      </a>
+    </div>
+    <div class="header-right-panel">
+      <div class="hero"></div>
+      <div class="welcome-text">Welcome back, 
+        <strong><%= current_user.display_name %>.</strong>
+      </div>
+      <ul class="nav">
+        <li class="nav-item logout"><i></i><a href="#">Logout</a></li>
+        <li class="nav-item settings"><i></i><a href="#">Settings</a></li>
+        <li class="nav-item help"><i></i><a href="#">Help</a></li>
+      </ul>
+      <div class="right-border"></div>
+    </div>
+  </div>
+</div>

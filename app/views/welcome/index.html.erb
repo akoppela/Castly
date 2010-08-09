@@ -1,7 +1,20 @@
-<h1>
-	Hi, we are play at StarCraft 2, wait a minute, we are working! Ya Ya
-</h1>
-<p>
-	<%= link_to "Login", login_path -%>
-</p>
-<%= link_to "Sex, Party - Lala!", signup_path -%>
+<div class="logo">
+  <h1>
+    <%= image_tag "prerelease-logo.png", :title => "Castly", :alt => "Castly" %>
+  </h1>
+  <div class="slogan">Get. Watch. Share.</div>
+  <div class="separator"></div>
+</div>
+<div class="main">
+  <h2 class="welcome">Aloha, mi amore!</h2>
+  <p class="clones">One million clones are working to get this project<br/>awesome. It will be there soon. Get patience a bit.</p>
+  <p class="inform">Type your email address and we gonna inform you<br/>about this incredible date.</p>
+  <div class="email-form">
+    <%= link_to "Login", login_path, :class => "submit" %>
+    <%= link_to "Signup", signup_path, :class => "submit" %>
+  </div>
+</div>
+<div class="border-bottom"></div>
+
+
+

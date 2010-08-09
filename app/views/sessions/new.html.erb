@@ -1,11 +1,21 @@
-<h1>Sessions#new</h1>
-<div class="box">
-	<%= semantic_form_for @session, :url => sessions_path do |form| %>
-
-	  <%= form.inputs :name => "Your Secure Information" do %>
-	    <%= form.input :login %>
-	    <%= form.input :password %>
-	  <% end %>
-	  <%= form.buttons  %>
-	<% end %>
+<div class="logo">
+  <h1>
+    <%= image_tag "prerelease-logo.png", :title => "Castly", :alt => "Castly" %>
+  </h1>
+  <div class="slogan">Get. Watch. Share.</div>
+  <div class="separator"></div>
 </div>
+<div class="main">
+  <h2 class="welcome">Aloha, mi amore!</h2>
+  <%= form_for @session, :url => sessions_path do |f| %>
+    <div class="email-form">
+      <%= f.text_field :login, :id => "email", :placeholder => "My email address is..." -%>
+    </div>
+    <div class="email-form">
+      <%= f.text_field :password, :id => 'email',
+                    :placeholder => "Passsword" -%>
+      <a href="#" class="submit">I'm in.</a>
+    </div>
+  <% end %>
+</div>
+<div class="border-bottom"></div>

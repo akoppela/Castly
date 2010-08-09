@@ -4,9 +4,9 @@ set :repository,  "git@blinr.unfuddle.com:blinr/castly.git"
 set :scm, :git
 set :user, "apps"
 set :use_sudo, false
-role :app, "castly.com"
-role :app, "castly.com"
-role :db,  "castly.com", :primary => true
+role :app, "blinr.com"
+role :app, "blinr.com"
+role :db,  "blinr.com", :primary => true
 
 set :deploy_to, "/srv/apps/#{application}"
 

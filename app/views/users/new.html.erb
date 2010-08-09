@@ -1,7 +1,26 @@
-<h1>Users#new</h1>
-<div class="box">
-  <%= semantic_form_for @user do |form| %>
-	  <%= form.inputs :login, :password, :password_confirmation, :invite_token, :accept_notice, :accept_rules, :time_zone %>
-    <%= form.buttons  %>
+<div class="logo">
+  <h1>
+    <%= image_tag "prerelease-logo.png", :title => "Castly", :alt => "Castly" %>
+  </h1>
+  <div class="slogan">Get. Watch. Share.</div>
+  <div class="separator"></div>
+</div>
+<div class="main">
+  <%= form_for @user do |f| %>
+    <div class="email-form">
+      <%= f.text_field :login, :id => "email", :placeholder => "My email address is..." -%>
+    </div>
+    <div class="email-form">
+      <%= f.text_field :invite_token, :id => "email", :placeholder => "Your invite token is..." -%>
+    </div>
+    <div class="email-form">
+      <%= f.password_field :password, :id => 'email', :placeholder => "Password" -%>
+    </div>
+    <div class="email-form">
+      <%= f.password_field :password_confirmation, :id => 'email',
+                    :placeholder => "Passsword confirmation" -%>
+      <a href="#" class="submit">I'm in.</a>
+    </div>
   <% end %>
 </div>
+<div class="border-bottom"></div>

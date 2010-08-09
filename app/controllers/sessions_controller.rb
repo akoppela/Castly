@@ -1,5 +1,6 @@
 class SessionsController < ApplicationController
-  before_filter :authenticate#, :only => :destroy
+  layout 'minimal'
+  before_filter :authenticate, :only => :destroy
   before_filter :require_no_user, :except => :destroy
   
   respond_to :html
