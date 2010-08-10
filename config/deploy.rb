@@ -30,7 +30,7 @@ namespace :deploy do
   end
   
   task :bundle do
-    run "cd #{release_path} && bundle install --production #{shared_path}/bundle"
+    run "cd #{release_path} && bundle install #{shared_path}/bundle --production"
   end
 end
 

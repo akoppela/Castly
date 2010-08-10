@@ -1,12 +1,12 @@
 RAILS_ROOT = File.expand_path(File.dirname(__FILE__) + "/../")
-rails_env = ENV['RACK_ENV'] || 'production'
+rails_env = ENV['RAILS_ENV'] || 'production'
 
 # 16 workers and 1 master
 worker_processes(rails_env == 'production' ? 4 : 1)
 
 # Load rails+github.git into the master before forking workers
 # for super-fast worker spawn times
-preload_app true
+preload_app false
 
 # Restart any workers that haven't responded in 30 seconds
 timeout 30
