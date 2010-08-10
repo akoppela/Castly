@@ -51,7 +51,9 @@ input, textarea { outline:none }
 .neck .videos.current .border-left { display:block; width:3px; height:30px; position:absolute; top:0; left:-3px; background:url(../images/neck-nav-current-border-left.gif) no-repeat 0 0 }
 .neck .videos.current .border-right { display:block; width:1px; height:30px; position:absolute; top:0; right:0; background:url(../images/neck-nav-current-border.gif) no-repeat 0 0 }
 .neck .downloads .border-left { display:block; width:3px; height:30px; position:absolute; top:0; left:-1.5px; background:url(../images/neck-nav-border.gif) no-repeat 0 0 }
+.neck .downloads.current .border-left { background-image:url(../images/neck-nav-border-active.gif) }
 .neck .downloads .border-right { display:block; width:2px; height:30px; position:absolute; top:0; right:-2px; background:url(../images/neck-nav-border-right.gif) no-repeat 0 0 }
+.neck .downloads.current .border-right { background-image:url(../images/neck-nav-border-right-active.gif) }
 .neck .downloads .count { width:22px; height:22px; position:absolute; top:-6px; right:-6px; background:url(../images/neck-nav-circle.png) no-repeat 0 0; text-align:center; font:14px/20px "Myriad Pro", serif; color:#7f0601; font-weight:bold; text-shadow:1px 1px 1px #ce5641 }
 .neck .downloads .count:hover { opacity:0.9 }
 .neck .neck-search { position:relative; float:right; margin-top:10px; height:31px; }
@@ -62,7 +64,7 @@ input, textarea { outline:none }
 /* body */
 
 .body { position:relative; z-index:1; margin:0 auto; width:950px; -webkit-box-shadow: 2px 2px 10px #333; -moz-box-shadow: 2px 2px 10px #333; box-shadow: 2px 2px 10px #333 }
-.body .container { float:left; margin-top:10px; -moz-box-shadow: 2px 2px 20px #777; -webkit-box-shadow: 2px 2px 20px #777; -khtml-box-shadow: 2px 2px 20px #777; -box-shadow: 2px 2px 20px #777 }
+.body .container { float:left; width:100%; margin-top:10px; -moz-box-shadow: 2px 2px 20px #777; -webkit-box-shadow: 2px 2px 20px #777; -khtml-box-shadow: 2px 2px 20px #777; -box-shadow: 2px 2px 20px #777 }
 
 /* body -> top panel */
 
@@ -147,6 +149,7 @@ input, textarea { outline:none }
 .body .video .video-list-item.blue-borders .img .border-top { display:block; position:absolute; width:119px; height:11px; background:url(../images/body-videos-tv-show-border-top.png) no-repeat 0 0; top:-10px; left:27px }
 .body .video .video-list-item.blue-borders .img .border-bottom { display:block; position:absolute; width:119px; height:8px; background:url(../images/body-videos-tv-show-border-bottom.png) no-repeat 0 0; bottom:-4px; left:27px }
 .body .video .video-list-item.blue-borders .img .border-right { display:block; position:absolute; width:11px; height:156px; background:url(../images/body-videos-tv-show-border-right.png) no-repeat 0 0; top:-10px; right:23px }
+.body .video .video-list-item:hover .img .border-bottom { display:none }
 
 /* body -> seasons */
 
@@ -196,6 +199,71 @@ input, textarea { outline:none }
 .body .seasons .seasons-arrow-up.item-4 { left:640px }
 .body .seasons .seasons-arrow-up.item-5 { left:820px }
 
+/* downloads */
+
+.body .downloads { position:relative; z-index:1; clear:left; width:100%; float:left; padding-bottom:10px; background:#566070; -moz-border-radius-bottomleft:4px; -webkit-border-bottom-left-radius:4px; -khtml-border-radius-bottomleft:4px; border-radius-bottomleft:4px; -moz-border-radius-bottomright:4px; -webkit-border-bottom-right-radius:4px; -khtml-border-radius-bottomright:4px; border-radius-bottomright:4px }
+.body .downloads .downloads-list {}
+.body .downloads .downloads-list .downloads-list-item { display:block; float:left; width:100%; border-top:1px solid #636c7a }
+.body .downloads .downloads-list .downloads-list-item.opened { border-top:none }
+.body .downloads .downloads-list .downloads-list-item .info-box { float:left; width:100%; background:#6e7888; padding-bottom:10px; border-top:1px solid #757f8e }
+.body .downloads .downloads-list .downloads-list-item.opened .info-box { border-top:none }
+.body .downloads .downloads-list .downloads-list-item.transparent .info-box { background:#566070 }
+.body .downloads .downloads-list .downloads-list-item .info-box .info { position:relative; margin-left:40px; float:left; margin-top:10px }
+.body .downloads .downloads-list .downloads-list-item .info-box .info .icon { position:absolute; top:14px; left:-25px; width:7px; height:14px; background:url(../images/body-downloads-list-item-bullets.png) no-repeat -1px -11px }
+.body .downloads .downloads-list .downloads-list-item.opened .info-box .info .icon { top:18px; width:13px; height:6px; background-position:-1px -26px }
+.body .downloads .downloads-list .downloads-list-item.alone .info-box .info .icon { width:10px; height:10px; background-position:0 0 }
+.body .downloads .downloads-list .downloads-list-item .info-box .info .title a { font-size:13px; font-weight:bold; color:#fcfcfc; text-decoration:none }
+.body .downloads .downloads-list .downloads-list-item.transparent .info-box .info .title a { color:#5a9df0 }
+.body .downloads .downloads-list .downloads-list-item .info-box .info .title a:hover { opacity:0.8 }
+.body .downloads .downloads-list .downloads-list-item .info-box .info .files-info { font-size:12px; color:#c8d2e2 }
+.body .downloads .downloads-list .downloads-list-item .info-box .status { float:right; margin:14px 58px 0 0 }
+.body .downloads .downloads-list .downloads-list-item .info-box .status .status-name { float:right; font-size:13px; font-weight:bold; color:#b4d2f7; text-align:right }
+.body .downloads .downloads-list .downloads-list-item .info-box .status .status-name.downloading { color:#b4d2f7 }
+.body .downloads .downloads-list .downloads-list-item .info-box .status .status-name.transcoding { color:#beffb9 }
+.body .downloads .downloads-list .downloads-list-item .info-box .status .status-name.watch { color:#fff }
+.body .downloads .downloads-list .downloads-list-item .info-box .status .status-icon { display:block; position:absolute; right:21px; top:18px; width:22px; height:23px; background:url(../images/body-downloads-status.png) no-repeat 0 0 }
+.body .downloads .downloads-list .downloads-list-item .info-box .status .status-icon:hover { opacity:0.8 }
+.body .downloads .downloads-list .downloads-list-item .info-box .status .status-1 { height:23px; background-position:0 0 }
+.body .downloads .downloads-list .downloads-list-item .info-box .status .status-2 { height:23px; background-position:0 -23px }
+.body .downloads .downloads-list .downloads-list-item .info-box .status .status-3 { height:23px; background-position:0 -68px }
+.body .downloads .downloads-list .downloads-list-item .info-box .status .status-4 { height:23px; background-position:0 -91px }
+.body .downloads .downloads-list .downloads-list-item .info-box .status .status-5 { height:23px; background-position:0 -114px }
+.body .downloads .downloads-list .downloads-list-item .info-box .status .status-6 { height:23px; background-position:0 -136px }
+.body .downloads .downloads-list .downloads-list-item .info-box .status .status-7 { height:23px; background-position:0 -159px }
+.body .downloads .downloads-list .downloads-list-item .info-box .status .status-8 { height:23px; background-position:0 -183px }
+.body .downloads .downloads-list .downloads-list-item .info-box .status .time-left { clear:both; float:right; font-size:12px; color:#bfc9d9 }
+.body .downloads .downloads-list .downloads-list-item .folders { display:none; float:left; margin-left:40px; clear:left; width:100% }
+.body .downloads .downloads-list .downloads-list-item.opened .folders { display:block }
+.body .downloads .downloads-list .downloads-list-item .folder { display:block; float:left; clear:left; width:100%; overflow-y:hidden; height:75px }
+.body .downloads .downloads-list .downloads-list-item .folder.opened { overflow:visible; height:auto }
+.body .downloads .downloads-list .downloads-list-item .folder .folder-info { position:relative; z-index:1; float:left; width:100% }
+.body .downloads .downloads-list .downloads-list-item .folder .folder-info .folder-name { position:relative; z-index:2; margin-left:10px; padding:0 10px 0 5px; font-size:12px; background:#566070; color:#c8d2e2; text-decoration:none }
+.body .downloads .downloads-list .downloads-list-item .folder .folder-info .folder-name:hover { opacity:0.8 }
+.body .downloads .downloads-list .downloads-list-item .folder .folder-info .folder-name .icon { position:absolute; left:-10px; top:2px; display:block; width:9px; height:10px; background:url(../images/body-downloads-folders-icons.png) no-repeat 0 -10px }
+.body .downloads .downloads-list .downloads-list-item .folder.opened .folder-info .folder-name .icon { background-position:0 0 }
+.body .downloads .downloads-list .downloads-list-item .folder .folder-info .hr { position:absolute; top:12px; right:40px; z-index:1; width:100%; max-width:900px; height:1px; background:#737d8d }
+.body .downloads .downloads-list .downloads-list-item .folder .files { position:relative; z-index:2; float:left; margin-top:8px; width:100% }
+.body .downloads .downloads-list .downloads-list-item .folder .files .file { display:block; position:relative; float:left; margin:0 20px 10px 0; width:270px; height:40px; padding:0 0 0 10px; background:#566070; border:1px solid #404854; -moz-border-radius:5px; -webkit-border-radius:5px; -khtml-border-radius:5px; border-radius:5px }
+.body .downloads .downloads-list .downloads-list-item .folder .files .file.filled { background:#404855 }
+.body .downloads .downloads-list .downloads-list-item .folder .files .file .name { float:left; margin-top:5px; font-size:12px; color:#949eae; text-decoration:none; width:230px; height:15px; overflow:hidden }
+.body .downloads .downloads-list .downloads-list-item .folder .files .file .name:hover { opacity:0.7 }
+.body .downloads .downloads-list .downloads-list-item .folder .files .file.filled .name { color:#fff }
+.body .downloads .downloads-list .downloads-list-item .folder .files .file .size { float:left; clear:left; font-size:12px; color:#949eae }
+.body .downloads .downloads-list .downloads-list-item .folder .files .file .status { display:block; position:absolute; right:10px; top:8px; width:22px; height:23px; background:url(../images/body-downloads-status.png) no-repeat 0 0 }
+.body .downloads .downloads-list .downloads-list-item .folder .files .file .status:hover { opacity:0.8 }
+.body .downloads .downloads-list .downloads-list-item .folder .files .file .status-1 { height:23px; background-position:0 0 }
+.body .downloads .downloads-list .downloads-list-item .folder .files .file .status-2 { height:23px; background-position:0 -23px }
+.body .downloads .downloads-list .downloads-list-item .folder .files .file .status-3 { height:23px; background-position:0 -68px }
+.body .downloads .downloads-list .downloads-list-item .folder .files .file .status-4 { height:23px; background-position:0 -91px }
+.body .downloads .downloads-list .downloads-list-item .folder .files .file .status-5 { height:23px; background-position:0 -114px }
+.body .downloads .downloads-list .downloads-list-item .folder .files .file .status-6 { height:24px; background-position:0 -136px }
+.body .downloads .downloads-list .downloads-list-item .folder .files .file .status-7 { height:24px; background-position:0 -159px }
+.body .downloads .downloads-list .downloads-list-item .folder .files .file .status-8 { height:23px; background-position:0 -183px }
+.body .downloads .downloads-list .downloads-list-item .folder .files .file .tooltip { position:absolute; top:-20px; right:-10px; padding:3px 5px; background:#202327; font-size:12px; color:#fff; -moz-border-radius:3px; -webkit-border-radius:3px; -khtml-border-radius:3px; border-radius:3px }
+.body .downloads .downloads-list .downloads-list-item .folder .files .file .tooltip.download { right:-10px }
+.body .downloads .downloads-list .downloads-list-item .folder .files .file .tooltip.dont-download { right:-24px }
+.body .downloads .downloads-list .downloads-list-item .folder .files .file .tooltip i { position:absolute; left:50%; bottom:-5px; margin-left:-3px; width:9px; height:5px; background:url(../images/body-downloads-folder-file-tooltip-arrow.gif) no-repeat 0 0 }
+
 /* footer */
 
 .footer { margin:0 auto; position:relative; width:950px }
@@ -207,3 +275,71 @@ input, textarea { outline:none }
 .footer .right .pp { margin-right:15px }
 .footer .right a { font-size:13px; font-weight:bold; color:#6d7787; text-decoration:none; text-shadow:0 1px 1px #c2c8d2, 0 1px 1px #fff }
 .footer .right a:hover { opacity:0.8 }
+
+/* popups */
+
+.shadow-bg { position:fixed; z-index:3; width:100%; height:100%; background:#000; opacity:0.9 }
+
+/* popups -> invite friends */
+
+.popups .invite-friends-popup { position:absolute; z-index:4; top:63px; left:272px; width:470px; height:305px; background:#c8d2e2; -moz-border-radius:3px; -webkit-border-radius:3px; -khtml-border-radius:3px; border-radius:3px }
+.popups .invite-friends-popup .title { margin:20px; font:30px/30px Georgia, Palatino, "Palatino Linotype", Times, "Times New Roman"; color:#6e7888; font-style:italic; text-shadow:0 1px 1px #f1f1f5 }
+.popups .invite-friends-popup .title .left { float:left }
+.popups .invite-friends-popup .title .right { float:right; margin-top:-2px }
+.popups .invite-friends-popup .description { float:left; margin:23px 30px; font-size:15px; font-weight:bold; color:#6e7888; text-shadow:0 1px 1px #f1f1f5 }
+.popups .invite-friends-popup #invite-friends-name { float:left; margin:0 0 0 30px; height:29px; width:395px; padding:0 10px; background:#fff; border:none; font-size:13px; font-weight:bold; color:#afb9c9; text-shadow:1px 0 1px #dadee6; -moz-border-radius:3px; -webkit-border-radius:3px; -khtml-border-radius:3px; border-radius:3px; -webkit-box-shadow:1px 1px 2px #c0c0c0; -moz-box-shadow:1px 1px 2px #c0c0c0; box-shadow:1px 1px 2px #c0c0c0 }
+.popups .invite-friends-popup #invite-friends-name:focus { color:#666 }
+.popups .invite-friends-popup #invite-friends-email { float:left; margin:10px 0 0 30px; height:29px; width:395px; padding:0 10px; background:#fff; border:none; font-size:13px; font-weight:bold; color:#afb9c9; text-shadow:1px 0 1px #dadee6; -moz-border-radius:3px; -webkit-border-radius:3px; -khtml-border-radius:3px; border-radius:3px; -webkit-box-shadow:1px 1px 2px #c0c0c0; -moz-box-shadow:1px 1px 2px #c0c0c0; box-shadow:1px 1px 2px #c0c0c0 }
+.popups .invite-friends-popup #invite-friends-email:focus { color:#666 }
+.popups .invite-friends-popup .one-more-invite { float:left; margin:25px 0 0 30px }
+.popups .invite-friends-popup .one-more-invite:hover { opacity:0.8 }
+.popups .invite-friends-popup .one-more-invite a { font-size:15px; font-weight:bold; color:#6e7888; text-decoration:none }
+.popups .invite-friends-popup .one-more-invite a .icon { display:block; float:left; margin:2px 7px 0 0; width:16px; height:16px; background:url(../images/popups-invite-friends-one-more-icon.png) no-repeat 0 0 }
+.popups .invite-friends-popup .one-more-invite a .text { border-bottom:1px dotted #6e7888; text-shadow:0 1px 1px #e4e7ef }
+.popups .invite-friends-popup .invite-button { display:block; margin:20px 25px 0 0; float:right; height:32px; line-height:27px; width:76px; background:url(../images/popups-invite-friends-invite-bg.gif) repeat-x 0 0; font-size:13px; font-weight:bold; color:#fff; text-align:center; text-shadow:1px 0 1px #9ca0a8; text-decoration:none; -moz-border-radius:3px; -webkit-border-radius:3px; -khtml-border-radius:3px; border-radius:3px }
+.popups .invite-friends-popup .invite-button:hover { opacity:0.9 }
+.popups .invite-friends-popup .bottom-bg { position:absolute; bottom:0; left:0; width:100%; height:5px; background:#969da9; -moz-border-radius-bottomleft:3px; -webkit-border-bottom-left-radius:3px; -khtml-border-radius-bottomleft:3px; border-radius-bottomleft:3px; -moz-border-radius-bottomright:3px; -webkit-border-bottom-right-radius:3px; -khtml-border-radius-bottomright:3px; border-radius-bottomright:3px }
+.popups .invite-friends-popup .arrow-up { position:absolute; width:32px; height:16px; top:-16px; left:221px; background:url(../images/popups-arrow-up.gif) no-repeat 0 0 }
+.popups .invite-friends-popup .invite-friends-button { position:absolute; top:-53px; left:178px }
+.popups .invite-friends-popup .invite-friends-button a { position:relative; display:block; height:30px; background:url(../images/header-invite-bg.gif) repeat-x 0 0; color:#fff; text-decoration:none }
+.popups .invite-friends-popup .invite-friends-button a .border-left { display:block; position:absolute; left:-2px; top:0; height:30px; width:2px; background:url(../images/header-invite-borders.gif) no-repeat 0 0 }
+.popups .invite-friends-popup .invite-friends-button a .border-right { display:block; position:absolute; right:-2px; top:0; height:30px; width:2px; background:url(../images/header-invite-borders.gif) no-repeat -2px 0 }
+.popups .invite-friends-popup .invite-friends-button a .text { display:block; float:left; height:30px; line-height:25px; margin:0 17px; font-size:13px; font-weight:bold; text-shadow:1px -1px 1px #9a9ca2 }
+.popups .invite-friends-popup .invite-friends-button a:hover { color:#e0e0e0 }
+
+/* popups -> add media */
+
+.popups .add-media-popup { position:absolute; z-index:4; top:63px; left:157px; width:950px; height:210px; background:#c8d2e2; -moz-border-radius:3px; -webkit-border-radius:3px; -khtml-border-radius:3px; border-radius:3px }
+.popups .add-media-popup .container .browse { position:relative; float:left; width:475px; height:142px }
+.popups .add-media-popup .container .browse .text-1 { margin:15px 20px; font-size:15px; font-weight:bold; color:#6e7888; text-shadow:0 1px 1px #f1f1f5 }
+.popups .add-media-popup .container .browse .box { float:left; width:100%; margin-top:3px; }
+.popups .add-media-popup .container .browse .browse-button { display:block; float:left; margin:0 10px 0 20px; width:90px; height:32px; line-height:27px; font-size:13px; font-weight:bold; color:#fff; text-align:center; text-decoration:none; background:url(../images/popups-add-media-browse-button-bg.gif) repeat-x 0 0; -moz-border-radius:3px; -webkit-border-radius:3px; -khtml-border-radius:3px; border-radius:3px; -moz-border-radius-bottomleft:5px; -webkit-border-bottom-left-radius:5px; -khtml-border-radius-bottomleft:5px; border-radius-bottomleft:5px; -moz-border-radius-bottomright:5px; -webkit-border-bottom-right-radius:5px; -khtml-border-radius-bottomright:5px; border-radius-bottomright:5px }
+.popups .add-media-popup .container .browse .browse-button:hover { opacity:0.8 }
+.popups .add-media-popup .container .browse .text-2 { font-size:13px; font-weight:bold; color:#9098a3; text-shadow:0 1px 1px #f1f1f5 }
+.popups .add-media-popup .container .browse .text-3 { float:left; margin:20px 0 0 20px; font-size:15px; font-weight:bold; color:#6e7888; text-shadow:0 1px 1px #f1f1f5 }
+.popups .add-media-popup .container .browse .separator .line-top { position:absolute; top:0; right:0; width:1px; height:57px; background:#b4bdcb }
+.popups .add-media-popup .container .browse .separator .line-bottom { position:absolute; bottom:2px; right:0; width:1px; height:57px; background:#b4bdcb }
+.popups .add-media-popup .container .browse .separator .text { position:absolute; top:61px; right:-6px; font-size:15px; font-weight:bold; font-style:italic; color:#b4bdcb; text-shadow:0 1px 1px #e0e6ef }
+.popups .add-media-popup .container .uri { float:left; width:475px }
+.popups .add-media-popup .container .uri .text-1 { margin:15px 0 15px 20px; font-size:15px; font-weight:bold; color:#6e7888; text-shadow:0 1px 1px #f1f1f5 }
+.popups .add-media-popup .container .uri #add-media-popup-link { float:left; margin:6px 0 0 20px; height:29px; width:415px; padding:0 10px; background:#fff; border:none; font-size:13px; font-weight:bold; color:#afb9c9; text-shadow:1px 0 1px #dadee6; -moz-border-radius:3px; -webkit-border-radius:3px; -khtml-border-radius:3px; border-radius:3px; -webkit-box-shadow:1px 1px 2px #c0c0c0; -moz-box-shadow:1px 1px 2px #c0c0c0; box-shadow:1px 1px 2px #c0c0c0 }
+.popups .add-media-popup .container .uri #add-media-popup-link:focus { color:#666 }
+.popups .add-media-popup .container .uri .text-2 { float:left; margin:20px 0 0 20px; font-size:15px; font-weight:bold; color:#6e7888; text-shadow:0 1px 1px #f1f1f5 }
+.popups .add-media-popup .add-media-button { position:absolute; top:-53px; left:126px }
+.popups .add-media-popup .add-media-button a { position:relative; display:block; height:30px; background:url(../images/header-new-media-bg.gif) repeat-x 0 0; color:#fff; text-decoration:none }
+.popups .add-media-popup .add-media-button a .border-left { display:block; position:absolute; left:-2px; top:0; height:30px; width:2px; background:url(../images/header-new-media-borders.gif) no-repeat 0 0 }
+.popups .add-media-popup .add-media-button a .border-right { display:block; position:absolute; right:-2px; top:0; height:30px; width:2px; background:url(../images/header-new-media-borders.gif) no-repeat -2px 0 }
+.popups .add-media-popup .add-media-button a .text { display:block; float:left; height:30px; line-height:25px; margin:0 17px; font-size:13px; font-weight:bold; text-shadow:1px -1px 1px #db8976 }
+.popups .add-media-popup .add-media-button a:hover { color:#e0e0e0 }
+.popups .add-media-popup .upload-box { position:absolute; bottom:0; left:0; width:100%; height:67px; background:#b8c1d0; text-align:center; -moz-border-radius-bottomleft:3px; -webkit-border-bottom-left-radius:3px; -khtml-border-radius-bottomleft:3px; border-radius-bottomleft:3px; -moz-border-radius-bottomright:3px; -webkit-border-bottom-right-radius:3px; -khtml-border-radius-bottomright:3px; border-radius-bottomright:3px }
+.popups .add-media-popup .upload-box a { display:block; margin:15px auto 0 auto; width:87px; height:32px; line-height:27px; font-size:13px; font-weight:bold; color:#fff; text-decoration:none; text-align:center; background:url(../images/popups-media-add-upload-bg.gif) repeat-x 0 0; text-shadow:0 1px 1px #d13312; -moz-border-radius:3px; -webkit-border-radius:3px; -khtml-border-radius:3px; border-radius:3px; -moz-border-radius-bottomleft:5px; -webkit-border-bottom-left-radius:5px; -khtml-border-radius-bottomleft:5px; border-radius-bottomleft:5px; -moz-border-radius-bottomright:5px; -webkit-border-bottom-right-radius:5px; -khtml-border-radius-bottomright:5px; border-radius-bottomright:5px }
+.popups .add-media-popup .upload-box a:hover { opacity:0.8 }
+.popups .add-media-popup .bottom-bg { position:absolute; z-index:1; bottom:0; left:0; width:100%; height:5px; background:#969da9; -moz-border-radius-bottomleft:3px; -webkit-border-bottom-left-radius:3px; -khtml-border-radius-bottomleft:3px; border-radius-bottomleft:3px; -moz-border-radius-bottomright:3px; -webkit-border-bottom-right-radius:3px; -khtml-border-radius-bottomright:3px; border-radius-bottomright:3px }
+.popups .add-media-popup .arrow-up { position:absolute; width:32px; height:16px; top:-16px; left:160px; background:url(../images/popups-arrow-up.gif) no-repeat 0 0 }
+
+/* popups -> announces */
+
+.popups .announce { position:fixed; z-index:4; bottom:0; left:0; width:100%; height:50px; line-height:50px; opacity:0.9; background:url(../images/popups-announces-bg.gif) repeat-x 0 0; font-size:18px; font-weight:bold; text-align:center }
+.popups .announce.error { background-position:0 0; color:#460a00; text-shadow:1px 1px 1px #d54c30 }
+.popups .announce.info { background-position:0 -50px; color:#333; text-shadow:1px 1px 1px #a5aab0 }
+.popups .announce.success { height:49px; background-position:0 -101px; color:#1a4f00; text-shadow:1px 1px 1px #acde77 }
