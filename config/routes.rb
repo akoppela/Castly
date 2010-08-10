@@ -8,4 +8,5 @@ Castly::Application.routes.draw do
   
   get 'login' => "sessions#new"
   get 'signup' => "users#new"
+  get 'logout' => "sessions#destroy"
 end

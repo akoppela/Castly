@@ -1,29 +1,17 @@
 <div class="neck">
   <div class="nav-wrapper">
     <ul class="nav">
-      <li class="nav-item videos current">
-        <span class="text">Videos</span>
-        <i class="border-left"></i><i class="border-right"></i><i class="bg"></i>
-      </li>
-      <li class="nav-item store">
-        <a href="#">
-          <span class="text">Store</span>
-          <i class="border-left"></i><i class="border-right"></i><i class="bg"></i>
-        </a>
-      </li>
-      <li class="nav-item downloads">
-        <a href="#">
-          <span class="text">Downloads</span>
-          <i class="border-left"></i><i class="border-right"></i><i class="bg"></i>
-          <strong class="count">3</strong>
-        </a>
-      </li>
+      <%= nav_item(videos_path,"Videos","videos") -%>
+      <%= nav_item(root_path,"Store","store") -%>
+      <%= nav_item(downloads_path,"Downloads","downloads",3) -%>
     </ul>
   </div>
   <div class="neck-search">
     <div class="wrapper">
       <input id="search" placeholder="Search" />
-      <a href="#"><img src="images/neck-search-button.gif" alt="Найти" /></a>
+      <a href="#">
+        <%= image_tag "neck-search-button.gif", :title => "Search", :alt => "Search" %>
+      </a>
       <i class="border-left"></i><i class="border-right"></i><i class="bg"></i>
     </div>
   </div>

@@ -24,9 +24,15 @@
         <strong><%= current_user.display_name %>.</strong>
       </div>
       <ul class="nav">
-        <li class="nav-item logout"><i></i><a href="#">Logout</a></li>
-        <li class="nav-item settings"><i></i><a href="#">Settings</a></li>
-        <li class="nav-item help"><i></i><a href="#">Help</a></li>
+        <li class="nav-item logout"><i></i>
+          <%= link_to "Logout", logout_path %>
+        </li>
+        <li class="nav-item settings"><i></i>
+          <%= link_to "Settings", "#" %>
+        </li>
+        <li class="nav-item help"><i></i>
+          <%= link_to "Help", "#" %>
+        </li>
       </ul>
       <div class="right-border"></div>
     </div>
