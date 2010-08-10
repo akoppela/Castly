@@ -4,9 +4,9 @@ set :repository,  "git@blinr.unfuddle.com:blinr/castly.git"
 set :scm, :git
 set :user, "apps"
 set :use_sudo, false
-role :app, "blinr.com"
-role :app, "blinr.com"
-role :db,  "blinr.com", :primary => true
+role :app, "castly.com"
+role :app, "castly.com"
+role :db,  "castly.com", :primary => true
 
 set :deploy_to, "/srv/apps/#{application}"
 
@@ -30,7 +30,7 @@ namespace :deploy do
   end
   
   task :bundle do
-    run "cd #{release_path} && RAILS_ENV=production bundle install #{shared_path}/bundle"
+    run "cd #{release_path} && bundle install --production #{shared_path}/bundle"
   end
 end
 
